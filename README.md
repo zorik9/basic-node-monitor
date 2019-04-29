@@ -30,12 +30,6 @@ The stack was tested in ubuntu 16.04, and was design to run on UNIX like system 
 To provision your machine, Run setup.bash
 the setup script will handle permissions, and install all of the dependencies in your machine.
 
-After a successfull setup you should see the following message in the console:
-====================================
-Setup has been successfully finished
-====================================
-
-
 After setting up your environment, run install.bash
 This script will clean the environment, install the dependencies,
 and create new environment, with docker-compose,
