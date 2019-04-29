@@ -1,0 +1,501 @@
+{
+    "dashboard": {
+      "id": null,
+      "title": "Basic Monitor Overview",
+      "tags": [ "templated" ],
+      "timezone": "browser",
+      "rows": [{
+		  "panels": [
+
+			{
+
+			  "aliasColors": {},
+
+			  "bars": false,
+
+			  "dashLength": 10,
+
+			  "dashes": false,
+
+			  "datasource": null,
+
+			  "fill": 1,
+
+			  "gridPos": {
+
+				"h": 8,
+
+				"w": 24,
+
+				"x": 0,
+
+				"y": 0
+
+			  },
+
+
+			  "id": 1,
+
+			  "legend": {
+
+				"avg": false,
+
+				"current": false,
+
+				"max": false,
+
+				"min": false,
+
+				"show": true,
+
+				"total": false,
+
+				"values": false
+
+			  },
+
+			  "lines": true,
+
+			  "linewidth": 1,
+
+			  "links": [],
+
+			  "nullPointMode": "null",
+
+			  "percentage": false,
+
+			  "pointradius": 5,
+
+			  "points": false,
+
+			  "renderer": "flot",
+
+			  "seriesOverrides": [],
+
+			  "spaceLength": 10,
+
+			  "stack": false,
+
+			  "steppedLine": false,
+
+			  "targets": [
+
+				{
+
+				  "expr": "avg by (instance) (irate(process_cpu_seconds_total{job=\"node\"}[10m]))",
+
+				  "format": "time_series",
+
+				  "intervalFactor": 1,
+
+				  "legendFormat": "{{ C.P.U }}",
+
+				  "refId": "cpu"
+
+				}
+
+			  ],
+
+			  "thresholds": [],
+
+			  "timeFrom": null,
+
+			  "timeShift": null,
+
+			  "title": "C.P.U usage (%)",
+
+			  "tooltip": {
+
+				"shared": true,
+
+				"sort": 0,
+
+				"value_type": "individual"
+
+			  },
+
+			  "type": "graph",
+
+			  "xaxis": {
+
+				"buckets": null,
+
+				"mode": "time",
+
+				"name": null,
+
+				"show": true,
+
+				"values": []
+
+			  },
+
+			  "yaxes": [
+
+				{
+
+				  "format": "short",
+
+				  "label": null,
+
+				  "logBase": 1,
+
+				  "max": null,
+
+				  "min": null,
+
+				  "show": true
+
+				},
+
+				{
+
+				  "format": "short",
+
+				  "label": null,
+
+				  "logBase": 1,
+
+				  "max": null,
+
+				  "min": null,
+
+				  "show": true
+
+				}
+
+			  ]
+
+			},
+
+		        {
+
+			  "aliasColors": {},
+
+			  "bars": false,
+
+			  "dashLength": 10,
+
+			  "dashes": false,
+
+			  "datasource": null,
+
+			  "fill": 1,
+
+			  "gridPos": {
+
+				"h": 8,
+
+				"w": 24,
+
+				"x": 0,
+
+				"y": 0
+
+			  },
+
+
+			  "id": 2,
+
+			  "legend": {
+
+				"avg": false,
+
+				"current": false,
+
+				"max": false,
+
+				"min": false,
+
+				"show": true,
+
+				"total": false,
+
+				"values": false
+
+			  },
+
+			  "lines": true,
+
+			  "linewidth": 1,
+
+			  "links": [],
+
+			  "nullPointMode": "null",
+
+			  "percentage": false,
+
+			  "pointradius": 5,
+
+			  "points": false,
+
+			  "renderer": "flot",
+
+			  "seriesOverrides": [],
+
+			  "spaceLength": 10,
+
+			  "stack": false,
+
+			  "steppedLine": false,
+
+			  "targets": [
+
+				{
+
+				  "expr": "100 * (1 - ((avg_over_time(node_memory_MemFree_bytes[10m]) + avg_over_time(node_memory_Cached_bytes[10m]) + avg_over_time(node_memory_Buffers_bytes[10m])) / avg_over_time(node_memory_MemTotal_bytes[10m])))",
+
+				  "format": "time_series",
+
+				  "intervalFactor": 1,
+
+				  "legendFormat": "{{ Memory }}",
+
+				  "refId": "memory"
+
+				}
+
+			  ],
+
+			  "thresholds": [],
+
+			  "timeFrom": null,
+
+			  "timeShift": null,
+
+			  "title": "Memory usage (%)",
+
+			  "tooltip": {
+
+				"shared": true,
+
+				"sort": 0,
+
+				"value_type": "individual"
+
+			  },
+
+			  "type": "graph",
+
+			  "xaxis": {
+
+				"buckets": null,
+
+				"mode": "time",
+
+				"name": null,
+
+				"show": true,
+
+				"values": []
+
+			  },
+
+			  "yaxes": [
+
+				{
+
+				  "format": "short",
+
+				  "label": null,
+
+				  "logBase": 1,
+
+				  "max": null,
+
+				  "min": null,
+
+				  "show": true
+
+				},
+
+				{
+
+				  "format": "short",
+
+				  "label": null,
+
+				  "logBase": 1,
+
+				  "max": null,
+
+				  "min": null,
+
+				  "show": true
+
+				}
+
+			  ]
+
+			},
+
+		        {
+
+			  "aliasColors": {},
+
+			  "bars": false,
+
+			  "dashLength": 10,
+
+			  "dashes": false,
+
+			  "datasource": null,
+
+			  "fill": 1,
+
+			  "gridPos": {
+
+				"h": 8,
+
+				"w": 24,
+
+				"x": 0,
+
+				"y": 0
+
+			  },
+
+
+			  "id": 3,
+
+			  "legend": {
+
+				"avg": false,
+
+				"current": false,
+
+				"max": false,
+
+				"min": false,
+
+				"show": true,
+
+				"total": false,
+
+				"values": false
+
+			  },
+
+			  "lines": true,
+
+			  "linewidth": 1,
+
+			  "links": [],
+
+			  "nullPointMode": "null",
+
+			  "percentage": false,
+
+			  "pointradius": 5,
+
+			  "points": false,
+
+			  "renderer": "flot",
+
+			  "seriesOverrides": [],
+
+			  "spaceLength": 10,
+
+			  "stack": false,
+
+			  "steppedLine": false,
+
+			  "targets": [
+
+				{
+
+				  "expr": "rate(node_disk_io_time_seconds_total[10m]) * 100",
+
+				  "format": "time_series",
+
+				  "intervalFactor": 1,
+
+				  "legendFormat": "{{ Disk }}",
+
+				  "refId": "disk"
+
+				}
+
+			  ],
+
+			  "thresholds": [],
+
+			  "timeFrom": null,
+
+			  "timeShift": null,
+
+			  "title": "Disk usage (%)",
+
+			  "tooltip": {
+
+				"shared": true,
+
+				"sort": 0,
+
+				"value_type": "individual"
+
+			  },
+
+			  "type": "graph",
+
+			  "xaxis": {
+
+				"buckets": null,
+
+				"mode": "time",
+
+				"name": null,
+
+				"show": true,
+
+				"values": []
+
+			  },
+
+			  "yaxes": [
+
+				{
+
+				  "format": "short",
+
+				  "label": null,
+
+				  "logBase": 1,
+
+				  "max": null,
+
+				  "min": null,
+
+				  "show": true
+
+				},
+
+				{
+
+				  "format": "short",
+
+				  "label": null,
+
+				  "logBase": 1,
+
+				  "max": null,
+
+				  "min": null,
+
+				  "show": true
+
+				}
+
+			  ]
+
+			}
+
+
+		  ]
+		}
+	  ],
+      "schemaVersion": 6,
+      "version": 0
+    },
+    "overwrite": true
+}
